@@ -1,8 +1,8 @@
 #!/bin/bash
 
-curl "http://localhost:4741/meals" \
+curl "http://localhost:4741/meals/${ID}" \
   --include \
-  --request POST \
+  --request PATCH \
   --header "Content-Type: application/json" \
   --data '{
     "meal": {
