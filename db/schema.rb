@@ -26,7 +26,6 @@ ActiveRecord::Schema.define(version: 2019_01_29_162233) do
   create_table "meals", force: :cascade do |t|
     t.string "name"
     t.string "description"
-    t.string "recipe"
     t.float "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
