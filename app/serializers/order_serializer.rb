@@ -1,3 +1,7 @@
+# frozen_string_literal: true
+
 class OrderSerializer < ActiveModel::Serializer
-  attributes :id, :price, :meal_id, :user_id
+  attributes :id, :total, :meal
+  has_one :user
+  has_many :meal
 end

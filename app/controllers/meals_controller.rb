@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class MealsController < ApplicationController
-  before_action :set_meal, only: [:show, :update, :destroy]
+  before_action :set_meal, only: %i[show update destroy]
 
   # GET /meals
   def index
@@ -39,13 +41,14 @@ class MealsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_meal
-      @meal = Meal.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def meal_params
-      params.require(:meal).permit(:name, :description, :price)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_meal
+    @meal = Meal.find(params[:id])
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def meal_params
+    params.require(:meal).permit(:name, :price)
+  end
 end

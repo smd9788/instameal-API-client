@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class MealSerializer < ActiveModel::Serializer
-  attributes :id, :name, :description, :price
+  attributes :id, :name, :price
 end

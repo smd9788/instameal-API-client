@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 class CreateOrders < ActiveRecord::Migration[5.2]
   def change
     create_table :orders do |t|
-      t.references :meal, foreign_key: true
       t.references :user, foreign_key: true
-      t.float :price
+      t.references :meal, foreign_key: true
+      t.float :total
 
       t.timestamps
     end
