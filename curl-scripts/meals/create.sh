@@ -7,7 +7,6 @@ curl "http://localhost:4741/meals" \
   --data '{
     "meal": {
       "name": "'"${NAME}"'",
-      "description": "'"${DESCRIPTION}"'",
       "price": "'"${PRICE}"'"
     }
   }'
