@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  resources :final_orders
   resources :orders, except: %i[new edit]
   resources :meals, except: %i[new edit]
   resources :examples, except: %i[new edit]
