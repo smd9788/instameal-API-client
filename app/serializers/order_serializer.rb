@@ -2,5 +2,4 @@
 
 class OrderSerializer < ActiveModel::Serializer
   attributes :id, :total, :meal_id, :user_id, :quantity
-  has_one :user
 end
