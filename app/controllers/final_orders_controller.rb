@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-class FinalOrdersController < ApplicationController
+class FinalOrdersController < ProtectedController
   before_action :set_final_order, only: %i[show update destroy]
 
   # GET /final_orders
   def index
-    @final_orders = FinalOrder.all
+    @final_orders = current_user.final_orders.all
 
     render json: @final_orders
   end
@@ -17,7 +17,7 @@ class FinalOrdersController < ApplicationController
 
   # POST /final_orders
   def create
-    @final_order = FinalOrder.new(final_order_params)
+    @final_order = current_user.final_orders.new(final_order_params)
 
     if @final_order.save
       render json: @final_order, status: :created, location: @final_order
@@ -44,7 +44,7 @@ class FinalOrdersController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_final_order
-    @final_order = FinalOrder.find(params[:id])
+    @final_order = current_user.final_orders.find(params[:id])
   end
 
   # Only allow a trusted parameter "white list" through.

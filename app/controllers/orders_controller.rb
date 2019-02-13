@@ -2,6 +2,8 @@
 
 class OrdersController < ApplicationController
   before_action :set_order, only: %i[show update destroy]
+  attr_reader :current_user
+  # validates :quantity, numericality: { greater_than: 0 }
 
   # GET /orders
   def index
