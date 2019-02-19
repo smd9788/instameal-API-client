@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class OrdersController < ApplicationController
+class OrdersController < ProtectedController
   before_action :set_order, only: %i[show update destroy]
   attr_reader :current_user
   # validates :quantity, numericality: { greater_than: 0 }

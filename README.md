@@ -24,14 +24,13 @@ https://imgur.com/a/HiGjYKA
 
 Technologies Used:
 
-JavaScript
 HTML
 CSS
+JavaScript
 jQuery
 Ruby on Rails
 Handlebars
-AJAX requests from preconfigured API
-
+Bootstrap
 
 Unsolved Problems/Missing features:
 
